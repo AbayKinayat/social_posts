@@ -9,20 +9,22 @@ export function buildPlugins(options: BuildOptions):
 webpack.WebpackPluginInstance[] {
   const { isDev, paths } = options;
 
-  return [
-    new HtmlWebpackPlugin({
-      title: 'Hello world Webpack',
-      template: paths.html,
-    }),
-    new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
-    }),
-    new webpack.DefinePlugin({
-      __IS_DEV__: JSON.stringify(isDev),
-    }),
-    isDev && new ReactRefreshWebpackPlugin(),
-    options.analyze && new BundleAnalyzerPlugin(),
-  ].filter(Boolean);
+  const plugins =  [
+      new HtmlWebpackPlugin({
+        title: 'Hello world Webpack',
+        template: paths.html,
+      }),
+      new webpack.ProgressPlugin(),
+      new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].css',
+      }),
+      new webpack.DefinePlugin({
+        __IS_DEV__: JSON.stringify(isDev),
+      }),
+      isDev && new ReactRefreshWebpackPlugin(),
+      options.analyze && new BundleAnalyzerPlugin(),
+    ]
+
+  return plugins.filter(Boolean);
 }
