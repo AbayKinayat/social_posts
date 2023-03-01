@@ -13,11 +13,11 @@ export function App() {
   const [count, setCount] = useState(0);
 
   const increment = () => {
-    setCount(prev => prev + 1)
-  }
+    setCount((prev) => prev + 1);
+  };
 
   if (count > 5) {
-    throw new Error("Test error");
+    throw new Error('Test error');
   }
 
   return (

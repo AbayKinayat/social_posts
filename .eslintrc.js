@@ -35,9 +35,11 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'import/no-extraneous-dependencies': 'off',
     'max-len': ['error', {
-      ignoreComments: true
+      ignoreComments: true,
+      code: 100
     }],
-    'no-extra-boolean-cast': 'off'
+    'no-extra-boolean-cast': 'off',
+    'no-param-reassign': 'off'
   },
   globals: {
     __IS_DEV__: true

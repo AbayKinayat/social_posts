@@ -26,7 +26,7 @@ export class ErrorBoundary
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("ERROR",errorInfo);
+    console.error('ERROR', errorInfo);
   }
 
   render() {
