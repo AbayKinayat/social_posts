@@ -1,0 +1,18 @@
+@use "./reset";
+@use "./themes/dark.scss";
+@use "./themes/normal.scss";
+@use "./variables/global.scss";
+
+.app {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  font: var(--font-m);
+  background: var(--bg-color);
+  color: var(--primary-color);
+  min-height: 100vh;
+
+  &__navbar {
+    grid-column: 1 / 3;
+  }
+}
