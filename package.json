@@ -12,6 +12,7 @@
     "test:unit": "jest --config ./config/jest/jest.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
+    "test:ui:ci": "build-storybook && loki --requireReference --reactUri file:./storybook-static",
     "analyze:prod": "webpack --env mode=production analyze=1",
     "analyze:dev": "webpack --env mode=development analyze=0",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
