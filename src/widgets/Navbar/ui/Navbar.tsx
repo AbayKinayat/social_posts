@@ -11,6 +11,7 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = ({ className }) => (
   <div className={classNames(classes.Navbar, className)}>
     <div className={classes.links}>
+      Text
       <AppLink
         to="/about"
         theme={AppLinkTheme.SECONDARY}
