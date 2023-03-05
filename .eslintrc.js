@@ -2,23 +2,23 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true
+    jest: true,
   },
   extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'jest'],
   rules: {
     'react/jsx-indent': [2, 2],
     'import/prefer-default-export': ['off', 'any'],
     'react/jsx-filename-extension': [1, {
-      extensions: ['.js', '.jsx', '.tsx']
+      extensions: ['.js', '.jsx', '.tsx'],
     }],
     'react/react-in-jsx-scope': 'off',
     'import/no-unresolved': 'off',
@@ -36,12 +36,13 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'max-len': ['error', {
       ignoreComments: true,
-      code: 100
+      code: 100,
     }],
     'no-extra-boolean-cast': 'off',
-    'no-param-reassign': 'off'
+    'no-param-reassign': 'off',
+    'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
   },
   globals: {
-    __IS_DEV__: true
-  }
+    __IS_DEV__: true,
+  },
 };
