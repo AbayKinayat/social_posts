@@ -15,5 +15,5 @@ export const renderComponent = (
     <I18nextProvider i18n={i18nForTests}>
       {component}
     </I18nextProvider>
-  </MemoryRouter>
+  </MemoryRouter>,
 );
