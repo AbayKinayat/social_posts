@@ -15,11 +15,18 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primery = Template.bind({});
-Primery.args = {
+export const Clear = Template.bind({});
+Clear.args = {
   children: 'Text',
 };
-Primery.decorators = [ThemeDecorator(Theme.LIGHT)];
+Clear.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+  children: 'Text',
+  theme: ButtonTheme.CLEAR_INVERTED,
+};
+Clear.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const Outlined = Template.bind({});
 Outlined.args = {

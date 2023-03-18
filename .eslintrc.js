@@ -41,8 +41,17 @@ module.exports = {
     'no-extra-boolean-cast': 'off',
     'no-param-reassign': 'off',
     'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'react/jsx-no-bind': 'off',
   },
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.stories.{ts,tsx}'],
+      rules: { 'max-len': 'off' },
+    },
+  ],
 };

@@ -3,13 +3,16 @@
 @use "./themes/normal.scss";
 @use "./variables/global.scss";
 
+body {
+  font: var(--font-m);
+}
+
 .app {
+  color: var(--primary-color);
+  background: var(--bg-color);
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
-  font: var(--font-m);
-  background: var(--bg-color);
-  color: var(--primary-color);
   min-height: 100vh;
 
   &__navbar {
