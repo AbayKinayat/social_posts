@@ -11,13 +11,13 @@ interface ThemeProviderProps {
 
 // eslint-disable-next-line max-len
 const defaultTheme: Theme = localStorage.getItem(THEME_CONTEXT_STORAGE_KEY) as Theme || Theme.LIGHT;
-document.body.className = defaultTheme;
 
 export const ThemeProvider: FC<ThemeProviderProps> = ({
   children,
   initialTheme = defaultTheme,
 }) => {
   const [theme, setTheme] = useState<Theme>(initialTheme);
+  document.body.className = initialTheme;
 
   const defaultProps = useMemo(() => ({
     theme,
