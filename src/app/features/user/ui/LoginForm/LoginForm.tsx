@@ -15,6 +15,7 @@ export const LoginForm: FC = () => {
         className={classes.input}
         type="text"
         placeholder={t('type_username')}
+        autofocus
       />
       <Input
         className={classes.input}
