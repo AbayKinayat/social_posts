@@ -1,4 +1,6 @@
-import { type FC, useMemo, useState } from 'react';
+import {
+  type FC, useMemo, useState, useEffect,
+} from 'react';
 import {
   Theme,
   ThemeContext,
@@ -17,12 +19,15 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({
   initialTheme = defaultTheme,
 }) => {
   const [theme, setTheme] = useState<Theme>(initialTheme);
-  document.body.className = initialTheme;
 
   const defaultProps = useMemo(() => ({
     theme,
     setTheme,
   }), [theme]);
+
+  useEffect(() => {
+    document.body.className = initialTheme;
+  }, []);
 
   return (
     <ThemeContext.Provider value={defaultProps}>

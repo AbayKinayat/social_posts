@@ -4,5 +4,7 @@
   "main_page": "Главная страница",
   "language": "Русский",
   "page_not-found": "Страница не найдена",
-  "sign_in": "Войти"
+  "sign_in": "Войти",
+  "type_username": "Введите имя пользователя",
+  "type_password": "Введите пароль"
 }

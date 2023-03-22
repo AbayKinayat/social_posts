@@ -5,5 +5,7 @@
   "language": "English",
   "page_not-found": "Page not found",
   "about_us": "About us",
-  "sign_in": "Sign in"
+  "sign_in": "Sign in",
+  "type_username": "Type username",
+  "type_password": "Type password"
 }

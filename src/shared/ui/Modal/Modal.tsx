@@ -1,18 +1,29 @@
-import React, { FC, ReactNode } from 'react';
+import React, {
+  FC, ReactNode, useEffect, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from '../Portal/Portal';
 import classes from './Modal.module.scss';
 
 interface ModalProps {
   className?: string,
+  contentClassName?: string,
   children?: ReactNode,
   isOpen: boolean,
-  onClose?: () => void
+  lazy?: boolean,
+  onClose?: () => void,
 }
 
 export const Modal: FC<ModalProps> = ({
-  className, children, isOpen, onClose,
+  className,
+  contentClassName,
+  children,
+  isOpen,
+  lazy,
+  onClose,
 }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
   function overlayClickHandler() {
     if (onClose) onClose();
   }
@@ -21,11 +32,22 @@ export const Modal: FC<ModalProps> = ({
     event.stopPropagation();
   }
 
+  useEffect(() => {
+    if (isOpen) { setIsMounted(true); }
+  }, [isOpen]);
+
+  if (lazy && !isMounted) return null;
+
   return (
     <Portal>
       <div className={classNames(classes.Modal, className, { [classes.opened]: isOpen })}>
         <div className={classes.overlay} onClick={overlayClickHandler}>
-          <div className={classes.content} onClick={contentClickHandler}>
+          <div
+            className={
+            classNames(classes.content, contentClassName)
+            }
+            onClick={contentClickHandler}
+          >
             {children}
           </div>
         </div>
