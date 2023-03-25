@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { LoginModal } from './LoginModal';
 
@@ -14,4 +15,4 @@ export const Primary = Template.bind({});
 Primary.args = {
   isOpen: true,
 };
-Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
+Primary.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({ loginForm: { password: '', username: '' } })];

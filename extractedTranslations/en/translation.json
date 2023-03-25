@@ -1,6 +1,11 @@
 {
+  "": "",
   "about_us": "",
+  "auth_error": "",
+  "auth_form": "",
   "language": "",
+  "login_error": "",
+  "logout": "",
   "main_page": "",
   "page_not-found": "",
   "sign_in": "",

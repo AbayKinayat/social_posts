@@ -44,13 +44,14 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'react/jsx-no-bind': 'off',
+    'react/prop-types': 'off',
   },
   globals: {
     __IS_DEV__: true,
   },
   overrides: [
     {
-      files: ['**/src/**/*.stories.{ts,tsx}'],
+      files: ['**/src/**/*.stories.{ts,tsx}', '**/config/storybook/**/*.js'],
       rules: { 'max-len': 'off' },
     },
   ],

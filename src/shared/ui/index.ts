@@ -6,3 +6,4 @@ export { Loader } from './Loader/Loader';
 export { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 export { Modal } from './Modal/Modal';
 export { Portal } from './Portal/Portal';
+export { Text } from './Text/Text';
