@@ -118,11 +118,5 @@
         "preset": "iPhone 7"
       }
     }
-  },
-  "sideEffects": [
-    "**/*.css",
-    "**/*.scss",
-    "**/*.svg",
-    "**/*.png"
-  ]
+  }
 }

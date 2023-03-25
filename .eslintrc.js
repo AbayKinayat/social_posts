@@ -45,6 +45,7 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
     'react/jsx-no-bind': 'off',
     'react/prop-types': 'off',
+    'lines-between-class-members': 'off',
   },
   globals: {
     __IS_DEV__: true,
