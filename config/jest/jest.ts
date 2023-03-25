@@ -41,6 +41,7 @@ export default {
   globals: {
     __IS_DEV__: true,
   },
+  transformIgnorePatterns: ['node_modules/(?!axios)'],
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
