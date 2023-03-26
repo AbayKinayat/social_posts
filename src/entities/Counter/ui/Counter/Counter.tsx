@@ -1,8 +1,9 @@
 import { getCounterValue } from 'entities/Counter/model/selectors/getCounterValue/getCounterValue';
+import { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { counterActions } from '../../model/slice/CounterSlice';
 
-export const Counter = () => {
+export const Counter = memo(() => {
   const dispatch = useDispatch();
   const counterValue = useSelector(getCounterValue);
 
@@ -27,4 +28,4 @@ export const Counter = () => {
       </button>
     </div>
   );
-};
+});

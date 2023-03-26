@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui';
 import classes from './PageError.module.scss';
@@ -7,11 +7,11 @@ interface PageErrorProps {
   className?: string;
 }
 
-export const PageError: FC<PageErrorProps> = ({ className }) => {
-  const pageReload = (): void => {
+export const PageError = memo<PageErrorProps>(({ className }) => {
+  const pageReload = useCallback(() => {
     // eslint-disable-next-line no-restricted-globals
     location.reload();
-  };
+  }, []);
 
   return (
     <div className={classNames(classes.PageError, className)}>
@@ -21,4 +21,4 @@ export const PageError: FC<PageErrorProps> = ({ className }) => {
       </Button>
     </div>
   );
-};
+});

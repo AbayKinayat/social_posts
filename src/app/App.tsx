@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Sidebar } from 'widgets/Sidebar/ui/Sidebar';
+import { Sidebar } from 'widgets/Sidebar';
 import { Navbar } from 'widgets/Navbar';
 import { userActions } from 'entities/User';
 

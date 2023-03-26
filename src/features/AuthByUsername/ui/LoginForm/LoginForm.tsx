@@ -26,7 +26,11 @@ const initialReducers = {
   loginForm: loginReducer,
 };
 
-const LoginForm = memo(() => {
+interface LoginFormProps {
+  onSuccess?: () => void
+}
+
+const LoginForm = memo<LoginFormProps>(({ onSuccess }) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const username = useSelector(getLoginUsername);
@@ -42,9 +46,13 @@ const LoginForm = memo(() => {
     dispatch(loginActions.setPassword(e.target.value));
   }, [dispatch]);
 
-  const loginClickHandler = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, username, password]);
+  const loginClickHandler = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess?.();
+    }
+  }, [dispatch, onSuccess, username, password]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>

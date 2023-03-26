@@ -1,0 +1,28 @@
+.SidebarItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: .1s;
+}
+
+.text {
+  white-space: nowrap;
+  transition: .1s;
+}
+
+.icon {
+  flex: 0 0 auto;
+  fill: var(--inverted-secondary-color);
+  width: 20px;
+  height: 20px;
+}
+
+.collapsed {
+  gap: 0;
+
+  .text {
+    visibility: none;
+    opacity: 0;
+    width: 0;
+  } 
+}

@@ -6,7 +6,7 @@ import type { StateSchema } from './StateSchema';
 
 export function createReduxStore(
   initialState: StateSchema,
-  asyncReducer: ReducersMapObject<StateSchema>,
+  asyncReducer?: ReducersMapObject<StateSchema>,
 ) {
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducer,

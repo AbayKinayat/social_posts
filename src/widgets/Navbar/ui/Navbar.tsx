@@ -1,4 +1,6 @@
-import { FC, useCallback, useState } from 'react';
+import {
+  memo, useCallback, useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUsername';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -13,7 +15,7 @@ interface NavbarProps {
     className?: string
 }
 
-export const Navbar: FC<NavbarProps> = ({ className }) => {
+export const Navbar = memo<NavbarProps>(({ className }) => {
   const { t } = useTranslation();
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const authData = useSelector(getUserAuthData);
@@ -27,8 +29,9 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
     setAuthModalOpen(true);
   }, []);
 
-  const logout = useCallback(() => {
-    dispatch(userActions.logout());
+  const logout = useCallback(async () => {
+    const result = await dispatch(userActions.logout());
+    console.log(result);
   }, [dispatch]);
 
   if (authData) {
@@ -60,4 +63,4 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
       </LoginModal>
     </div>
   );
-};
+});

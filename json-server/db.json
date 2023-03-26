@@ -12,5 +12,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": { 
+    "first": "Абай",
+    "lastname": "Кинаят",
+    "age": 22,
+    "currency": "KZ",
+    "country": "Kazakhstan",
+    "city": "Astana",
+    "username": "abay",
+    "avatar": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
+  }
 }
