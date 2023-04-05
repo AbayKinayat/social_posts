@@ -5,6 +5,7 @@ export interface BuildPaths {
   build: string,
   html: string,
   src: string,
+  apiUrl: string
 }
 
 export interface BuildOptions {
@@ -12,11 +13,12 @@ export interface BuildOptions {
   paths: BuildPaths,
   port: number,
   isDev: boolean,
-  analyze: number
+  analyze: number,
 }
 
 export interface BuildEnv {
   port?: number,
   mode?: 'development' | 'production'
-  analyze?: number
+  analyze?: number,
+  apiUrl?: string
 }

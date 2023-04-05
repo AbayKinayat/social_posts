@@ -2,7 +2,7 @@ interface ClassNamesMod {
   [key: string]: any
 }
 
-type ClassNamesArray = (string | ClassNamesMod | ClassNamesArray)[]
+type ClassNamesArray = (string | ClassNamesMod | ClassNamesArray | undefined)[]
 
 export function classNames(...args: ClassNamesArray): string {
   const result = args.map((arg): string => {

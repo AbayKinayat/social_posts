@@ -9,14 +9,14 @@ import { ThemeProvider } from './app/providers/ThemeProvider/index';
 import 'shared/config/i18n';
 
 render(
-  <StoreProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <StoreProvider>
       <ErrorBoundary component={<PageError />}>
         <ThemeProvider>
           <App />
         </ThemeProvider>
       </ErrorBoundary>
-    </BrowserRouter>
-  </StoreProvider>,
+    </StoreProvider>
+  </BrowserRouter>,
   document.getElementById('root'),
 );

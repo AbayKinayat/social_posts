@@ -7,8 +7,9 @@ export default ({ config }: {config: webpack.Configuration }) => {
   const paths: BuildPaths = {
     build: '',
     entry: '',
-    html: '',
+    html: 'http://localhost:8000',
     src: path.resolve(__dirname, '..', '..', 'src'),
+    apiUrl: '',
   };
 
   config.resolve?.modules?.push(paths.src);
@@ -32,6 +33,7 @@ export default ({ config }: {config: webpack.Configuration }) => {
 
   config.plugins?.push(new DefinePlugin({
     __IS_DEV__: true,
+    __API__: JSON.stringify(paths.apiUrl),
   }));
 
   return config;

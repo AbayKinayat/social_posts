@@ -15,4 +15,8 @@ export const Primary = Template.bind({});
 Primary.args = {
   isOpen: true,
 };
-Primary.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({ loginForm: { password: '', username: '' } })];
+Primary.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
+  loginForm: {
+    password: '', username: '', isLoading: false, error: '',
+  },
+})];

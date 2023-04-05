@@ -16,12 +16,10 @@ const Template: ComponentStory<typeof PageLoader> = (args) => <PageLoader {...ar
 
 export const Light = Template.bind({});
 Light.args = {
-  children: 'Text',
 };
 Light.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const Dark = Template.bind({});
 Dark.args = {
-  children: 'Text',
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

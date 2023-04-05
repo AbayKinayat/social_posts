@@ -7,6 +7,7 @@ export default (env: BuildEnv) => {
   const mode: BuildMode = env.mode || 'development';
   const PORT = env.port || 3000;
   const analyze = env.analyze || 0;
+  const apiUrl = env.apiUrl || 'http://localhost:8000';
 
   const isDev = mode === 'development';
 
@@ -15,6 +16,7 @@ export default (env: BuildEnv) => {
     build: path.resolve(__dirname, 'build'),
     html: path.resolve(__dirname, 'public', 'index.html'),
     src: path.resolve(__dirname, 'src'),
+    apiUrl,
   };
 
   const config: webpack.Configuration = buildWebpackoConfig({

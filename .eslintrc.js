@@ -46,9 +46,11 @@ module.exports = {
     'react/jsx-no-bind': 'off',
     'react/prop-types': 'off',
     'lines-between-class-members': 'off',
+    'no-undef': 'off',
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
   overrides: [
     {

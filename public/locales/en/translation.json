@@ -2,7 +2,7 @@
   "test": "Test example",
   "translation": "translation",
   "main_page": "Main page",
-  "profile_page": "Profile", 
+  "profile_page": "Profile",
   "language": "English",
   "page_not-found": "Page not found",
   "about_us": "About us",
@@ -11,5 +11,8 @@
   "type_password": "Type password",
   "auth_form": "Auth form",
   "auth_error": "Wrong password or username",
-  "logout": "Log out"
+  "logout": "Log out",
+  "type_your_avatar": "Type your avatar",
+  "select_currency": "Select currency",
+  "select_couuntry": "Select country"
 }

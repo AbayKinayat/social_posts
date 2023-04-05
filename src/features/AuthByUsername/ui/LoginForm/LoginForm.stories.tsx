@@ -29,6 +29,7 @@ Error.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
     username: '',
     password: '',
     error: 'Error message',
+    isLoading: false,
   },
 })];
 

@@ -2,7 +2,7 @@
   "test": "Тестовый пример",
   "translation": "Перевод",
   "main_page": "Главная страница",
-  "profile_page": "Профиль", 
+  "profile_page": "Профиль",
   "language": "Русский",
   "about_us": "О нас",
   "page_not-found": "Страница не найдена",
@@ -11,5 +11,7 @@
   "type_password": "Введите пароль",
   "auth_form": "Форма авторизации",
   "auth_error": "Неверный пароль или имя пользователя",
-  "logout": "Выйти"
+  "logout": "Выйти",
+  "select_currency": "Выберите валюту",
+  "select_couuntry": "Выберите страну"
 }

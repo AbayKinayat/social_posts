@@ -19,6 +19,12 @@
   color: var(--inverted-primary-color);
 }
 
+.outlinedNegative {
+  background: inherit;
+  border: 1px solid var(--red-light);
+  color: var(--red-light);
+}
+
 .outlined {
   background: inherit;
   border: 1px solid var(--primary-color);

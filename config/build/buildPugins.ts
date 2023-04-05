@@ -21,10 +21,12 @@ webpack.WebpackPluginInstance[] {
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(paths.apiUrl),
     }),
-    isDev && new ReactRefreshWebpackPlugin(),
-    options.analyze && new BundleAnalyzerPlugin(),
   ];
 
-  return plugins.filter(Boolean);
+  if (isDev) plugins.push(new ReactRefreshWebpackPlugin());
+  if (options.analyze) plugins.push(new BundleAnalyzerPlugin());
+
+  return plugins;
 }
