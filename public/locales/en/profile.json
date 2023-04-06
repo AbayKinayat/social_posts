@@ -5,5 +5,10 @@
   "your_lastname": "Your lastname",
   "cancel": "Cancel",
   "save": "Save",
-  "your_username": "Your username"
+  "your_username": "Your username",
+  "nocorreect_age": "No correct age",
+  "incorrect_country": "Incorrect country",
+  "incorrect_user_data": "Incorrect user data",
+  "no_data": "No data",
+  "server_error": "Server error"
 }

@@ -6,5 +6,10 @@
   "cancel": "Отмена",
   "save": "Сохранить",
   "your_username": "Ваш логин",
-  "type_your_avatar": "Введите свой аватар"
+  "type_your_avatar": "Введите свой аватар",
+  "nocorreect_age": "Не корректный возраст",
+  "incorrect_country": "Некорректный регион",
+  "incorrect_user_data": "Имя и фамилия обязательны",
+  "no_data": "Данные не указаны",
+  "server_error": "Серверная ошибка при сохранении"
 }

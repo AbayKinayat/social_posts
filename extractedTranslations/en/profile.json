@@ -1,8 +1,13 @@
 {
   "cancel": "",
   "edit": "",
+  "incorrect_country": "",
+  "incorrect_user_data": "",
+  "no_data": "",
+  "nocorreect_age": "",
   "profile": "",
   "save": "",
+  "server_error": "",
   "type_your_avatar": "",
   "your_firstname": "",
   "your_lastname": "",
