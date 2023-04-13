@@ -47,6 +47,7 @@ module.exports = {
     'react/prop-types': 'off',
     'lines-between-class-members': 'off',
     'no-undef': 'off',
+    'no-const-assign': 'off',
   },
   globals: {
     __IS_DEV__: true,
