@@ -48,6 +48,7 @@ module.exports = {
     'lines-between-class-members': 'off',
     'no-undef': 'off',
     'no-const-assign': 'off',
+    'react/jsx-no-useless-fragment': 'off',
   },
   globals: {
     __IS_DEV__: true,
