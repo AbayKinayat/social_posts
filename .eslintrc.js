@@ -36,7 +36,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'max-len': ['error', {
       ignoreComments: true,
-      code: 100,
+      code: 120,
     }],
     'no-extra-boolean-cast': 'off',
     'no-param-reassign': 'off',

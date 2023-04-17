@@ -14,5 +14,7 @@
   "logout": "Log out",
   "type_your_avatar": "Type your avatar",
   "select_currency": "Select currency",
-  "select_couuntry": "Select country"
+  "select_couuntry": "Select country",
+  "article_details_page": "Article details",
+  "article_page": "Articles"
 }

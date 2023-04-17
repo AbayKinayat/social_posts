@@ -5,9 +5,10 @@ import { routeConfig } from '../config/routeConfig';
 import { RequireAuth } from './RequireAuth';
 
 const AppRouter = () => (
-  <Suspense fallback={<PageLoader />}>
-    <Routes>
-      {
+  <div className="page-wrapper">
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        {
           Object.values(routeConfig).map(({ path, element, authOnly }) => (
             <Route
               key={path}
@@ -22,8 +23,9 @@ const AppRouter = () => (
             />
           ))
         }
-    </Routes>
-  </Suspense>
+      </Routes>
+    </Suspense>
+  </div>
 );
 
 export default memo(AppRouter);

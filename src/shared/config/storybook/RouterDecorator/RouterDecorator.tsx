@@ -1,8 +1,13 @@
 import { Story } from '@storybook/api';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
-export const RouterDecorator = (story: () => Story) => (
-  <BrowserRouter>
-    {story()}
-  </BrowserRouter>
+export const RouterDecorator = ({
+  initialEntries = ['/test/1'],
+  path = '/test/:id',
+}) => (story: () => Story) => (
+  <MemoryRouter initialEntries={initialEntries}>
+    <Routes>
+      <Route path={path} element={story()} />
+    </Routes>
+  </MemoryRouter>
 );

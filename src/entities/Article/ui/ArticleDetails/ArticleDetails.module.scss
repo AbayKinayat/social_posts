@@ -1,0 +1,26 @@
+.ArticleDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100%;
+}
+
+.avatar {
+  margin: 0 auto;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.articleInfo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

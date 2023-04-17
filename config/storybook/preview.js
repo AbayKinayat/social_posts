@@ -22,4 +22,4 @@ export const parameters = {
 
 addDecorator(mswDecorator);
 addDecorator(StyleDecorator);
-addDecorator(RouterDecorator);
+addDecorator(RouterDecorator({}));
