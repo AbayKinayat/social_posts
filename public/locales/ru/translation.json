@@ -14,5 +14,6 @@
   "logout": "Выйти",
   "select_currency": "Выберите валюту",
   "select_couuntry": "Выберите страну",
-  "article_page": "Статьи"
+  "article_page": "Статьи",
+  "comment_no": "Без комментариев"
 }

@@ -5,6 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { rest } from 'msw';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Comment } from 'entities/Comment';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 const testData = {
@@ -76,6 +77,23 @@ const testData = {
     },
   ],
 };
+const comments: Comment[] = [
+  {
+    id: 1,
+    text: 'Comment text',
+    user: { id: 1, username: 'abay', avatar: 'https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj' },
+  },
+  {
+    id: 2,
+    text: 'Comment text',
+    user: { id: 1, username: 'abay', avatar: 'https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj' },
+  },
+  {
+    id: 3,
+    text: 'Comment text',
+    user: { id: 1, username: 'abay', avatar: 'https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj' },
+  },
+];
 
 export default {
   title: 'pages/ArticleDetailsPage',
@@ -83,6 +101,7 @@ export default {
   parameters: {
     msw: [
       rest.get('/articles/1', (_req, res, ctx) => res(ctx.json(testData))),
+      rest.get('/comments?articleId=1&_expand=user', (_req, res, ctx) => res(ctx.json(comments))),
     ],
   },
 } as ComponentMeta<typeof ArticleDetailsPage>;

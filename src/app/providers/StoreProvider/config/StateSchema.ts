@@ -8,6 +8,7 @@ import type { ProfileSchema } from 'entities/Profile';
 import type { UserSchema } from 'entities/User';
 import type { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsSchema } from 'entities/Article';
+import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 
 export interface StateSchema {
   counter: CounterSchema,
@@ -16,7 +17,8 @@ export interface StateSchema {
   // Асинхронные редюсеры
   loginForm?: LoginSchema,
   profile?: ProfileSchema
-  articleDetails?: ArticleDetailsSchema
+  articleDetails?: ArticleDetailsSchema,
+  articleDetailsComments?: ArticleDetailsCommentsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
