@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
-import { SiderbarItemType } from '../../model/index';
+import { SiderbarItemType } from '../../model/types/SidebarItemType';
 import classes from './SidebarItem.module.scss';
 
 interface SiderbarItemProps {
