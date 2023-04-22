@@ -1,4 +1,6 @@
-import { memo, useEffect } from 'react';
+import {
+  Suspense, memo, useCallback, useEffect,
+} from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -6,9 +8,11 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoade
 import { Text } from 'shared/ui';
 import { CommentList } from 'entities/Comment';
 import { useSelector } from 'react-redux';
-import { getArticleDetailsCommentsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch';
-import { fetchArticleComments } from 'pages/ArticleDetailsPage/model/services/fetchArticleComments';
+import { AddCommentForm } from 'features/AddCommentForm';
+import { getArticleDetailsCommentsLoading } from '../../model/selectors/comments';
+import { fetchArticleComments } from '../../model/services/fetchArticleComments';
+import { sendArticleComment } from '../../model/services/sendArticleComment/sendArticleComment';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slice/articleDetailsComments';
 import classes from './ArticleDetailsPage.module.scss';
 
@@ -29,6 +33,10 @@ const ArticleDetailsPage = () => {
     return <div>{t('not_found')}</div>;
   }
 
+  const sendFormHandler = useCallback((text: string) => {
+    dispatch(sendArticleComment(text));
+  }, [dispatch]);
+
   useEffect(() => {
     dispatch(fetchArticleComments(id));
   }, [dispatch]);
@@ -42,6 +50,11 @@ const ArticleDetailsPage = () => {
         <Text
           title={t('comments')}
         />
+        <Suspense fallback="loading">
+          <AddCommentForm
+            onSubmit={sendFormHandler}
+          />
+        </Suspense>
         <CommentList
           comments={comments}
           isLoading={commentsIsLoading}

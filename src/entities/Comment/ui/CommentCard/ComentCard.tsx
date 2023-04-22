@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Text } from 'shared/ui';
+import { AppLink, Text } from 'shared/ui';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { RoutePath } from 'shared/config/route';
 import classes from './CommentCard.module.scss';
 import { Comment } from '../../types/comment';
 
@@ -35,7 +36,9 @@ export const CommentCard = memo<CommentCardProps>(({ className, comment, isLoadi
           size={20}
         />
         )}
-        <Text title={comment.user.username} />
+        <AppLink to={`${RoutePath.profile}/${comment.user.id}`}>
+          <Text title={comment.user.username} />
+        </AppLink>
       </div>
       <Text text={comment.text} />
     </div>

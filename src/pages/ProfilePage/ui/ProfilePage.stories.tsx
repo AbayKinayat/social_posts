@@ -25,7 +25,7 @@ export default {
   component: ProfilePage,
   parameters: {
     msw: [
-      rest.get('/profile', (_req, res, ctx) => res(ctx.json(TestData))),
+      rest.get('/profile/1', (_req, res, ctx) => res(ctx.json(TestData))),
     ],
   },
 } as ComponentMeta<typeof ProfilePage>;

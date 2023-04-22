@@ -24,6 +24,7 @@ import { Country } from 'entities/Country';
 import { Text } from 'shared/ui';
 import { TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import classes from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -40,6 +41,7 @@ const ProfilePage: FC = () => {
   const profileValidateErrors = useSelector(getProfileValidateErrors);
 
   const { t } = useTranslation('profile');
+  const { id } = useParams<{ id: string }>();
 
   const validateErrorsTranlaters = {
     [ValidateProfileError.INCORRECT_AGE]: t('nocorreect_age'),
@@ -50,8 +52,8 @@ const ProfilePage: FC = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchProfileData());
-  }, [dispatch]);
+    if (id) { dispatch(fetchProfileData(id)); }
+  }, [dispatch, id]);
 
   const changeFirstHandler = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     dispatch(profileActions.patchProfile({ first: event.target.value }));

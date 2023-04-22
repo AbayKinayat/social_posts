@@ -1,6 +1,9 @@
-import { getUserAuthData } from 'entities/User';
-import { FC, ReactNode } from 'react';
-import { useSelector } from 'react-redux';
+import { getUserAuthData, userActions } from 'entities/User';
+import {
+  FC, ReactNode, useEffect, useState,
+} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { Navigate, useLocation } from 'react-router-dom';
 import { RoutePath } from 'shared/config/route';
 
@@ -11,10 +14,18 @@ interface RequireAuthProps {
 export const RequireAuth: FC<RequireAuthProps> = ({ children }) => {
   const auth = useSelector(getUserAuthData);
   const location = useLocation();
+  const [inited, setInited] = useState(false);
 
-  console.log('auth', auth);
+  const dispatch = useDispatch();
 
-  if (!auth) {
+  useEffect(() => {
+    if (!auth) {
+      dispatch(userActions.initAuthData());
+    }
+    setInited(true);
+  }, [dispatch]);
+
+  if (inited && !auth) {
     return (
       <Navigate
         to={RoutePath.main}
@@ -27,6 +38,6 @@ export const RequireAuth: FC<RequireAuthProps> = ({ children }) => {
   }
 
   return (
-    <>{children}</>
+    <>{inited && children}</>
   );
 };

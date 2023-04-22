@@ -17,5 +17,7 @@
   "select_couuntry": "Select country",
   "article_details_page": "Article details",
   "article_page": "Articles",
-  "comment_no": "No comment"
+  "comment_no": "No comment",
+  "input_comment": "Input comment",
+  "send": "Send"
 }

@@ -5,6 +5,7 @@
   "auth_error": "",
   "auth_form": "",
   "comment_no": "",
+  "input_comment": "",
   "language": "",
   "login_error": "",
   "logout": "",
@@ -12,6 +13,7 @@
   "page_not-found": "",
   "select_couuntry": "",
   "select_currency": "",
+  "send": "",
   "sign_in": "",
   "type_password": "",
   "type_username": ""

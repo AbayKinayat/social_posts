@@ -24,7 +24,7 @@ describe('updateProfileData', () => {
     });
     thunk.api.put.mockReturnValue(Promise.resolve({ data: profileData }));
 
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk('1');
 
     expect(thunk.api.put).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
@@ -38,7 +38,7 @@ describe('updateProfileData', () => {
 
     thunk.api.put.mockReturnValue(Promise.resolve({ data: null }));
 
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk('1');
 
     expect(thunk.api.put).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');

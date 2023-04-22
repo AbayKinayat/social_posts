@@ -15,5 +15,7 @@
   "select_currency": "Выберите валюту",
   "select_couuntry": "Выберите страну",
   "article_page": "Статьи",
-  "comment_no": "Без комментариев"
+  "comment_no": "Без комментариев",
+  "input_comment": "Введите комментарий",
+  "send": "Отправлять"
 }

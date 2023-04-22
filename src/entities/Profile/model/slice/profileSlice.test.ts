@@ -91,7 +91,7 @@ describe('profileSlice', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        updateProfileData.fulfilled(profileData, ''),
+        updateProfileData.fulfilled(profileData, '', '1'),
       ),
     ).toEqual({
       isLoading: false,
@@ -110,7 +110,7 @@ describe('profileSlice', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        updateProfileData.rejected(new Error(), '', undefined, [ValidateProfileError.NO_DATA]),
+        updateProfileData.rejected(new Error(), '', '1', [ValidateProfileError.NO_DATA]),
       ),
     ).toEqual({
       isLoading: false,

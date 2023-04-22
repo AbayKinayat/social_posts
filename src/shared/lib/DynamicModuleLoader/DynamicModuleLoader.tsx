@@ -15,7 +15,7 @@ interface DynamicModuleLoaderProps {
 }
 
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
-  reducers, removeAfterUnmount = false, children,
+  reducers, removeAfterUnmount = true, children,
 }) => {
   const store = useStore() as ReduxStoreWithManager;
   const dispatch = useAppDispatch();
