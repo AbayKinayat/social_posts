@@ -1,0 +1,5 @@
+.icon {
+  &:not(.active) {
+    fill: var(--secondary-color);
+  }
+}
