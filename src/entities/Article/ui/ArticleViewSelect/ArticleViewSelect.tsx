@@ -33,6 +33,7 @@ export const ArticleViewSelect = memo<ArticleViewSelectProps>(({ view, onSelect 
       {
         viewTypes.map((type) => (
           <Button
+            key={type.view}
             theme={ButtonTheme.CLEAR}
             onClick={selectViewHandler(type.view as 'small' | 'big')}
           >

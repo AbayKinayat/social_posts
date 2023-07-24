@@ -5,27 +5,25 @@ import { routeConfig } from '../config/routeConfig';
 import { RequireAuth } from './RequireAuth';
 
 const AppRouter = () => (
-  <div className="page-wrapper">
-    <Suspense fallback={<PageLoader />}>
-      <Routes>
-        {
-          Object.values(routeConfig).map(({ path, element, authOnly }) => (
-            <Route
-              key={path}
-              path={path}
-              element={
-                authOnly ? (
-                  <RequireAuth>
-                    {element}
-                  </RequireAuth>
-                ) : element
-              }
-            />
-          ))
-        }
-      </Routes>
-    </Suspense>
-  </div>
+  <Suspense fallback={<PageLoader />}>
+    <Routes>
+      {
+        Object.values(routeConfig).map(({ path, element, authOnly }) => (
+          <Route
+            key={path}
+            path={path}
+            element={
+              authOnly ? (
+                <RequireAuth>
+                  {element}
+                </RequireAuth>
+              ) : element
+            }
+          />
+        ))
+      }
+    </Routes>
+  </Suspense>
 );
 
 export default memo(AppRouter);

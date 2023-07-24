@@ -1091,7 +1091,7 @@
           ]
         }
       ]
-    }  
+    }
   ],
   "comments": [
     {
@@ -1135,6 +1135,12 @@
       "userId": "1",
       "text": "aadasdasd",
       "id": "Gd-JA71"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "asdasd",
+      "id": "adlPhuk"
     }
   ],
   "users": [

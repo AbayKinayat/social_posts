@@ -15,13 +15,17 @@ export const getArticles = articlesPageAdapter.getSelectors<StateSchema>(
 );
 
 const articlePageSlice = createSlice({
-  name: 'articleDetailsMessages',
+  name: 'articlePage',
   initialState: articlesPageAdapter.getInitialState<ArticlePageSchema>({
     isLoading: false,
     error: '',
     entities: {},
     ids: [],
     view: 'small',
+    hasMore: true,
+    page: 0,
+    limit: 9,
+    _inited: false,
   }),
   reducers: {
     setView(state, action: PayloadAction<'small' | 'big'>) {
@@ -29,7 +33,13 @@ const articlePageSlice = createSlice({
       localStorage.setItem(ARTICLES_PAGE_VIEW, action.payload);
     },
     initView(state) {
-      state.view = localStorage.getItem(ARTICLES_PAGE_VIEW) as 'small' | 'big' || 'small';
+      const view = localStorage.getItem(ARTICLES_PAGE_VIEW) as 'small' | 'big' || 'small';
+      state.view = view;
+      state.limit = view === 'big' ? 6 : 9;
+      state._inited = true;
+    },
+    setPage(state, action: PayloadAction<number>) {
+      state.page = action.payload;
     },
   },
   extraReducers: (builder) => builder
@@ -43,9 +53,11 @@ const articlePageSlice = createSlice({
     .addCase(
       fetchArticles.fulfilled,
       (state, action: PayloadAction<Article[]>) => {
-        articlesPageAdapter.setAll(state, action.payload);
+        articlesPageAdapter.addMany(state, action.payload);
         state.isLoading = false;
         state.error = '';
+        state.hasMore = Boolean(action.payload.length);
+        console.log('Boolean(action.payload.length)', Boolean(action.payload.length));
       },
     )
     .addCase(

@@ -1,6 +1,7 @@
 import React, { ChangeEvent, FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
+import { Page } from 'shared/ui/Page/Page';
 
 const MainPage: FC = () => {
   const { t } = useTranslation();
@@ -11,7 +12,7 @@ const MainPage: FC = () => {
   };
 
   return (
-    <div>
+    <Page>
       {t('main_page')}
 
       <Input
@@ -19,7 +20,7 @@ const MainPage: FC = () => {
         value={value}
         onChange={changeHandler}
       />
-    </div>
+    </Page>
   );
 };
 

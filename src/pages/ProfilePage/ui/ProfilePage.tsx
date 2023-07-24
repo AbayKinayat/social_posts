@@ -25,6 +25,7 @@ import { Text } from 'shared/ui';
 import { TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 import classes from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -85,7 +86,7 @@ const ProfilePage: FC = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classes.ProfilePage}>
+      <Page className={classes.ProfilePage}>
         <ProfilePageHeader />
 
         { Boolean(profileValidateErrors.length) && profileValidateErrors.map((error) => (
@@ -109,7 +110,7 @@ const ProfilePage: FC = () => {
           onChangeAvatar={changeAvatarHandler}
           onChangeCurrency={changeCurrencyHandler}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

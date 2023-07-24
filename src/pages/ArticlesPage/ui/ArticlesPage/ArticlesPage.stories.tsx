@@ -87,7 +87,7 @@ export default {
   component: ArticlesPage,
   parameters: {
     msw: [
-      rest.get('/articles?_expand=user', (_req, res, ctx) => res(ctx.json(testData))),
+      rest.get('/articles?_expand=user', (_req, res, ctx) => res(ctx.json([testData]))),
     ],
   },
 } as ComponentMeta<typeof ArticlesPage>;
@@ -106,6 +106,7 @@ Dark.decorators = [
       isLoading: false,
       view: 'big',
     },
+    ui: { scroll: {} },
   }),
 ];
 
@@ -120,6 +121,9 @@ Light.decorators = [
       ids: [],
       isLoading: false,
       view: 'big',
+    },
+    ui: {
+      scroll: {},
     },
   }),
 ];

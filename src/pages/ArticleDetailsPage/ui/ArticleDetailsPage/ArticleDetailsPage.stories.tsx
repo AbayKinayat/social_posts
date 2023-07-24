@@ -117,5 +117,8 @@ Normal.decorators = [
     articleDetails: {
       data: testData,
     },
+    ui: {
+      scroll: {},
+    },
   }),
 ];
